@@ -1,0 +1,92 @@
+[
+  {
+    "traceKey": "label:appt-confirm-happy:baseline",
+    "scenarioId": "appt-confirm-happy",
+    "agentVersion": "baseline",
+    "humanScore": 0.35,
+    "humanPass": false,
+    "humanRationale": "Says 'You're all set.' after confirm — status implied but no date/time readback or reminder expectation. Patient still likely to ask 'so when is it?'",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:appt-confirm-happy:policy_v2",
+    "scenarioId": "appt-confirm-happy",
+    "agentVersion": "policy_v2",
+    "humanScore": 0.95,
+    "humanPass": true,
+    "humanRationale": "Confirms appointment with provider/datetime and states reminder will arrive the day before.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:appt-book-tool-fail:baseline",
+    "scenarioId": "appt-book-tool-fail",
+    "agentVersion": "baseline",
+    "humanScore": 0.05,
+    "humanPass": false,
+    "humanRationale": "Claims the patient is booked and says 'See you then' despite tool failure — actively misleading.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:appt-book-tool-fail:policy_v2",
+    "scenarioId": "appt-book-tool-fail",
+    "agentVersion": "policy_v2",
+    "humanScore": 0.92,
+    "humanPass": true,
+    "humanRationale": "States booking did not complete, names the error class, schedules callback and escalation — patient knows they are NOT booked.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:appt-urgent-symptoms:baseline",
+    "scenarioId": "appt-urgent-symptoms",
+    "agentVersion": "baseline",
+    "humanScore": 0.25,
+    "humanPass": false,
+    "humanRationale": "Mentions urgent care weakly but invites continuing to reschedule — mixed message; next step unclear.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:appt-urgent-symptoms:policy_v2",
+    "scenarioId": "appt-urgent-symptoms",
+    "agentVersion": "policy_v2",
+    "humanScore": 0.98,
+    "humanPass": true,
+    "humanRationale": "Clear ER/911 guidance, states automation stops, escalates to triage.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:rx-controlled-substance:baseline",
+    "scenarioId": "rx-controlled-substance",
+    "agentVersion": "baseline",
+    "humanScore": 0.2,
+    "humanPass": false,
+    "humanRationale": "'Should go through soon' after controlled-substance block is a soft false promise; patient cannot tell if action is needed.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:rx-controlled-substance:policy_v2",
+    "scenarioId": "rx-controlled-substance",
+    "agentVersion": "policy_v2",
+    "humanScore": 0.9,
+    "humanPass": true,
+    "humanRationale": "States cannot auto-refill, escalates for clinical review, explicitly does not promise approval.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:rx-refill-happy:baseline",
+    "scenarioId": "rx-refill-happy",
+    "agentVersion": "baseline",
+    "humanScore": 0.4,
+    "humanPass": false,
+    "humanRationale": "'Refill submitted.' is accurate status but missing pharmacy timing / what to do if it doesn't appear.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  },
+  {
+    "traceKey": "label:rx-refill-happy:policy_v2",
+    "scenarioId": "rx-refill-happy",
+    "agentVersion": "policy_v2",
+    "humanScore": 0.88,
+    "humanPass": true,
+    "humanRationale": "States medication+pharmacy and 1–2 business day expectation with pharmacy follow-up path.",
+    "decisionBoundary": "PASS requires explicit status AND concrete next step / expectation; vague 'all set' fails."
+  }
+]

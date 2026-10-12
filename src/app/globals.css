@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clinical ink + seafoam — avoid purple / cream / broadsheet defaults */
+    --ink: #12252e;
+    --foam: #e8f4f1;
+    --sea: #1f7a6c;
+    --sea-deep: #145a50;
+    --coral: #c45c3a;
+    --amber: #b8872c;
+    --wash: #eef3f1;
+    --panel: #f7faf9;
+    --mute: #5b6d74;
+    --line: #d5e0dc;
+
+    --background: var(--wash);
+    --foreground: var(--ink);
+    --card: var(--panel);
+    --card-foreground: var(--ink);
+    --popover: var(--panel);
+    --popover-foreground: var(--ink);
+    --primary: var(--sea);
+    --primary-foreground: #f4fffc;
+    --secondary: #dce8e4;
+    --secondary-foreground: var(--ink);
+    --muted: #e4ece9;
+    --muted-foreground: var(--mute);
+    --accent: #d7ebe5;
+    --accent-foreground: var(--ink);
+    --destructive: var(--coral);
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--sea);
+    --radius: 0.55rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(31, 122, 108, 0.12), transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, rgba(196, 92, 58, 0.08), transparent 50%),
+      linear-gradient(180deg, #f4f8f6 0%, #eef3f1 40%, #e8efec 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .bg-atmosphere {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(31, 122, 108, 0.09), transparent 35%),
+      radial-gradient(circle at 80% 10%, rgba(18, 37, 46, 0.06), transparent 40%);
+  }
+
+  .mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.45s ease-out both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.45s ease-out 0.08s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.45s ease-out 0.16s both;
+}
+
+.accent-line {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--sea), transparent);
+  animation: pulse-line 2.8s ease-in-out infinite;
+  transform-origin: left center;
+}

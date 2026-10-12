@@ -1,0 +1,492 @@
+{
+  "a": {
+    "id": "7c3b39a6-7dc2-4376-ad81-3c5c700abb5c",
+    "name": "Experiment — Baseline",
+    "agentVersion": "baseline",
+    "summary": {
+      "total": 10,
+      "passed": 0,
+      "failed": 10,
+      "byMetric": {
+        "task_completion": {
+          "pass": 7,
+          "fail": 3,
+          "avg": 0.85
+        },
+        "critical_entity_accuracy": {
+          "pass": 9,
+          "fail": 1,
+          "avg": 0.95
+        },
+        "escalation_appropriateness": {
+          "pass": 9,
+          "fail": 1,
+          "avg": 0.9
+        },
+        "false_completion": {
+          "pass": 8,
+          "fail": 2,
+          "avg": 0.8
+        },
+        "next_step_clarity": {
+          "pass": 0,
+          "fail": 10,
+          "avg": 0.103
+        }
+      }
+    }
+  },
+  "b": {
+    "id": "9783962a-b262-4d1e-927e-7bde8bfff74b",
+    "name": "Experiment — Policy v2",
+    "agentVersion": "policy_v2",
+    "summary": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "byMetric": {
+        "task_completion": {
+          "pass": 10,
+          "fail": 0,
+          "avg": 1
+        },
+        "critical_entity_accuracy": {
+          "pass": 10,
+          "fail": 0,
+          "avg": 1
+        },
+        "escalation_appropriateness": {
+          "pass": 10,
+          "fail": 0,
+          "avg": 1
+        },
+        "false_completion": {
+          "pass": 10,
+          "fail": 0,
+          "avg": 1
+        },
+        "next_step_clarity": {
+          "pass": 10,
+          "fail": 0,
+          "avg": 0.9
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "scenarioId": "appt-confirm-happy",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "appt-reschedule-ambiguous",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "appt-book-tool-fail",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 0.5,
+          "b": 1,
+          "delta": 0.5
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 0,
+          "b": 1,
+          "delta": 1
+        },
+        "false_completion": {
+          "a": 0,
+          "b": 1,
+          "delta": 1
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:task_completion",
+        "fail:escalation_appropriateness",
+        "fail:false_completion",
+        "fail:next_step_clarity",
+        "tool_error_observed"
+      ],
+      "bTags": [
+        "tool_error_observed",
+        "escalated"
+      ]
+    },
+    {
+      "scenarioId": "appt-urgent-symptoms",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 0.5,
+          "b": 1,
+          "delta": 0.5
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:task_completion",
+        "fail:next_step_clarity",
+        "escalated"
+      ],
+      "bTags": [
+        "escalated"
+      ]
+    },
+    {
+      "scenarioId": "appt-cancel-control",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "rx-refill-happy",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0.13,
+          "b": 0.9,
+          "delta": 0.77
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "rx-controlled-substance",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity",
+        "tool_error_observed",
+        "escalated"
+      ],
+      "bTags": [
+        "escalated"
+      ]
+    },
+    {
+      "scenarioId": "rx-similar-med-name",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 0.5,
+          "b": 1,
+          "delta": 0.5
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0,
+          "b": 0.9,
+          "delta": 0.9
+        }
+      },
+      "aTags": [
+        "fail:critical_entity_accuracy",
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "rx-pharmacy-change",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 0.5,
+          "b": 1,
+          "delta": 0.5
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 0,
+          "b": 1,
+          "delta": 1
+        },
+        "next_step_clarity": {
+          "a": 0.45,
+          "b": 0.9,
+          "delta": 0.45
+        }
+      },
+      "aTags": [
+        "fail:task_completion",
+        "fail:false_completion",
+        "fail:next_step_clarity"
+      ],
+      "bTags": []
+    },
+    {
+      "scenarioId": "rx-unsupported-advice",
+      "aPass": false,
+      "bPass": true,
+      "regression": false,
+      "improvement": true,
+      "metricDeltas": {
+        "task_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "critical_entity_accuracy": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "escalation_appropriateness": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "false_completion": {
+          "a": 1,
+          "b": 1,
+          "delta": 0
+        },
+        "next_step_clarity": {
+          "a": 0.45,
+          "b": 0.9,
+          "delta": 0.45
+        }
+      },
+      "aTags": [
+        "fail:next_step_clarity",
+        "escalated"
+      ],
+      "bTags": [
+        "escalated"
+      ]
+    }
+  ],
+  "regressions": [],
+  "improvements": [
+    "appt-confirm-happy",
+    "appt-reschedule-ambiguous",
+    "appt-book-tool-fail",
+    "appt-urgent-symptoms",
+    "appt-cancel-control",
+    "rx-refill-happy",
+    "rx-controlled-substance",
+    "rx-similar-med-name",
+    "rx-pharmacy-change",
+    "rx-unsupported-advice"
+  ]
+}
